@@ -1,0 +1,35 @@
+body
+{
+	background-color: #36393E;
+	color: #C0C1C2;
+	font-family: "Noto Sans CJK TC", "微軟正黑體";
+}
+
+#anonyMessage
+{
+	color: #C0C1C2;
+	background-color: #424549;
+	border: 2px solid #686A6E;
+	padding: 10px;
+	overflow: hidden;
+}
+
+#anonyWho
+{
+	color: #C0C1C2;
+	background-color: #424549;
+	border: 2px solid #686A6E;
+	height: 44px;
+}
+
+.anonyWhoPic
+{
+	display: none;
+	width: 200px;
+	height: 200px;
+}
+
+label
+{
+	font-weight: normal;
+}

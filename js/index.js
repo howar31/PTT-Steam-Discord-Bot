@@ -65,4 +65,40 @@ $(function() {
 			}
 		});
 	})
+
+	$('#logFileSelect').change(function() {
+		$('#logFileSelect').prop('disabled', true);
+
+		$.ajax({
+			url: 'controller.php',
+			method: 'post',
+			data: {
+				action: 'getlogfile',
+				filename: $(this).val()
+			},
+			dataType: 'json'
+		}).done(function(result) {
+			// console.log(result);
+			$('#logContent').html('');
+			var log = result['getlogfile'];
+			$.each(log, function(index, item) {
+				var logHTML =
+				"<div class='logEntry row'>"+
+					"<div class='logTime col-md-2'>" + log[index].request_time_local + "</div>"+
+					"<div class='logIPPort col-md-2' title='" + log[index].user_agent + "'>"+
+						"<span class='logIP'>" + log[index].remote_addr + "</span><span class='logPort'>" + log[index].remote_port + "</span>"+
+					"</div>"+
+					"<div class='logName col-md-1'>" + log[index].username + "</div>"+
+					"<div class='logMessage col-md-7'>" + log[index].content + "</div>"+
+				"</div>";
+				$('#logContent').append(logHTML);
+			});
+			$('#logFileSelect').prop('disabled', false);
+			$('#logTitle').show();
+		}).fail(function(jqXHR, textStatus, errorThrown) {
+			console.log("AJAX failed:\n" + textStatus + "\n" + errorThrown );
+			console.log(jqXHR);
+			$('#logFileSelect').prop('disabled', false);
+		});
+	});
 });

@@ -3,14 +3,9 @@ require_once(dirname(__FILE__)."/config.php");
 
 class model
 {
-	public function getJsonFile (string $filename)
+	public function getJsonFile (string $filename, string $type = 'json')
 	{
-		return empty($filename) ? NULL : json_decode(file_get_contents("json/".$filename.".json"), true);
-	}
-
-	public function getLogFile (string $filename)
-	{
-		return empty($filename) ? NULL : json_decode(file_get_contents("log/".$filename.".json"), true);
+		return empty($filename) ? NULL : json_decode(file_get_contents($type.'/'.$filename.'.json'), true);
 	}
 
 	public function setLogFile (array $addLog = array())
@@ -21,12 +16,12 @@ class model
 			'user_agent' => $_SERVER['HTTP_USER_AGENT'],
 			'remote_addr' => $_SERVER['REMOTE_ADDR'],
 			'remote_port' => $_SERVER['REMOTE_PORT'],
-			'request_time_local' => date('Y-m-d H:i:s O T', $_SERVER['REQUEST_TIME']),
+			'request_time_local' => date('Y-m-d H:i:s', $_SERVER['REQUEST_TIME']),
 			'request_time_utc' => gmdate('Y-m-d H:i:s', $_SERVER['REQUEST_TIME'])
 		);
 
 		$newLog = array_merge($serverLog, $addLog);
-		$oldLog = model::getLogFile($LogFileName);
+		$oldLog = model::getJsonFile($LogFileName, 'log');
 		if (empty($oldLog))
 		{
 			rename($LogFilePath, $LogFilePath.'.'.date('His').'.bad');

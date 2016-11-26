@@ -5,6 +5,17 @@ body
 	font-family: "Noto Sans CJK TC", "微軟正黑體";
 }
 
+h1, h2, h3, h4, h5, h6
+{
+	padding: 20px 0;
+}
+
+.section
+{
+	border-radius: 5px;
+	margin-bottom: 20px;
+}
+
 #anonyMessage
 {
 	color: #C0C1C2;
@@ -13,15 +24,14 @@ body
 	padding: 10px;
 	overflow: hidden;
 }
-
-#anonyWho
+#anonyWho,
+#logFileSelect
 {
 	color: #C0C1C2;
 	background-color: #424549;
 	border: 2px solid #686A6E;
 	height: 44px;
 }
-
 .anonyWhoPic
 {
 	display: none;
@@ -32,4 +42,32 @@ body
 label
 {
 	font-weight: normal;
+}
+
+#logTitle
+{
+	font-weight: bold;
+	font-size: 1.2em;
+	color: #0275D8;
+	display: none;
+}
+.logEntry
+{
+	padding: 5px 0;
+}
+.logEntry:nth-child(odd)
+{
+	background-color: #31353C;
+}
+.logEntry:hover
+{
+	background-color: #992D22;
+}
+.logEntry .logIP
+{
+	color: #3498DB;
+}
+.logEntry .logPort
+{
+	color: #979C9F;
 }

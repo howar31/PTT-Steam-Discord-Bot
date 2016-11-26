@@ -1,7 +1,7 @@
-<div class="col-md-6 col-md-offset-3">
-	<form role="form" action="./" method="POST">
+<div id="login" class="section row">
+	<form class="col-md-6 offset-md-3" role="form" action="./" method="POST">
 		<div class="form-group">
-			<h2>歡迎來到 PTT Steam 的 Discord 聊天群</h2>
+			<h2>歡迎來到 PTT Steam - Discord</h2>
 		</div>
 		<div class="form-group">
 			<label for="loginPW">通關密語請於 Discord 頻道內洽詢</label>

@@ -12,9 +12,13 @@ require_once(dirname(__FILE__)."/view.php");
 	<title>PTT Steam @Discord</title>
 
 	<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" href="bootstrap/css/bootstrap-flex.min.css">
+	<link rel="stylesheet" href="bootstrap/css/bootstrap-grid.min.css">
+	<link rel="stylesheet" href="bootstrap/css/bootstrap-reboot.min.css">
 	<link rel="stylesheet" href="css/index.css">
 
 	<script src="js/jquery-3.1.1.min.js"></script>
+	<script src="bootstrap/js/tether.min.js"></script>
 	<script src="bootstrap/js/bootstrap.min.js"></script>
 	<script src="js/index.js"></script>
 
@@ -25,8 +29,10 @@ require_once(dirname(__FILE__)."/view.php");
 </head>
 <body>
 	<div class="container">
-		<div class="row">
-			<div class="col-md-12"><h1>PTT Steam @Discord</h1></div>
+		<div class="section">
+			<div class="row">
+				<div id="siteTitle" class="col-md-12"><h1>PTT Steam @Discord</h1></div>
+			</div>
 		</div>
 		<?php
 		if ((isset($_POST['loginPW']) && (USER_PASSWORD === $_POST['loginPW'])) ||
@@ -34,6 +40,10 @@ require_once(dirname(__FILE__)."/view.php");
 		) {
 			$isAdmin = (isset($_POST['loginPW']) && (ADMIN_PASSWORD === $_POST['loginPW']));
 			require_once(dirname(__FILE__)."/template/anonymous_message.php");
+			if ($isAdmin)
+			{
+				require_once(dirname(__FILE__)."/template/anonymous_log.php");
+			}
 		} else {
 			$isLogin = isset($_POST['loginPW']);
 			require_once(dirname(__FILE__)."/template/login.php");

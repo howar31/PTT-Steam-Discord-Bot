@@ -5,7 +5,7 @@
 		</div>
 		<div class="form-group">
 			<label for="loginPW">通關密語請於 Discord 頻道內洽詢</label>
-			<input type="password" id="loginPW" name="loginPW" class="form-control" placeholder="通關密語" required>
+			<input type="password" id="loginPW" name="loginPW" class="form-control" placeholder="通關密語" required autofocus>
 		</div>
 		<?php
 		if ($isLogin) {

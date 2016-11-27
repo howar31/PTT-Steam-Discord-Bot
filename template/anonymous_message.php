@@ -1,14 +1,9 @@
+<?php
+$roles = view::getRoles();
+?>
 <div id="anonymous_message" class="section row">
 	<div class="col-xl-3 col-md-4">
-		<?php
-		$roles = view::getRoles();
-		foreach ($roles as $roleName => $roleData) {
-			$randomAvatar = view::getAvatar($roleName);
-			?>
-			<img class="anonyWhoPic" src="<?=$randomAvatar['url'];?>" data-name="<?=$roleName;?>" data-avatar="<?=$randomAvatar['index'];?>">
-			<?php
-		}
-		?>
+		<img id="anonyWhoPic" src="" title="點擊可隨機切換圖片">
 	</div>
 	<form class="col-xl-9 col-md-8" role="form" action="./" method="POST">
 		<div class="form-group">

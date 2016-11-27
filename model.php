@@ -51,10 +51,15 @@ class model
 	 * @param  array  $inputArray  can NOT be associative array
 	 * @return array               random selected key and value from array
 	 */
-	public function getRandomValue (array $inputArray)
+	public function getRandomValue (array $inputArray, int $excludeIndex = NULL)
 	{
 		$max = count($inputArray);
-		$randomNum = rand(0, ($max - 1));
+		if (empty($excludeIndex) || 1 >= $max)
+		{
+			$randomNum = rand(0, ($max - 1));
+		} else {
+			while($excludeIndex == ($randomNum = rand(0, ($max - 1))));
+		}
 		return array('key' => $randomNum, 'value' => $inputArray[$randomNum]);
 	}
 }

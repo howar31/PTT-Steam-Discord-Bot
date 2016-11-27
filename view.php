@@ -23,22 +23,28 @@ class view
 		$logFileList = array_reverse($logFileList);
 		return $logFileList;
 	}
+
 	/**
 	 * Get role avatar url and index
 	 * @param  string   $roleName  role name
-	 * @param  int|null $avatarNum specify avatar to get, if null then get random avatar
+	 * @param  int|null $avatarNum different usage accroding to $isRandom
+	 *                             if $isRandom is true, then $avatarNum means current avatar variation, get random but index is not $avatarNum
+	 *                             if $isRandom is false, then $avatarNum means get that specific avatar which index is $avatarNum
+	 * @param  bool     $isRandom  get random avatar or specific avatar
 	 * @return array               return avatar url and index
 	 */
-	public function getAvatar(string $roleName, int $avatarNum = NULL)
+	public function getAvatar(string $roleName, int $avatarNum = NULL, bool $isRandom = true)
 	{
 		$roles = view::getRoles();
 		$avatar = array();
-		if (empty($avatarNum))
+		if ($isRandom)
 		{
-			$randomAvatar = model::getRandomValue($roles[$roleName][0]['avatar_url']);
+			// get random
+			$randomAvatar = model::getRandomValue($roles[$roleName][0]['avatar_url'], $avatarNum);
 			$avatar['index'] = $randomAvatar['key'];
 			$avatar['url'] = $randomAvatar['value'];
 		} else {
+			//get specific
 			$avatar['index'] = $avatarNum;
 			$avatar['url'] = $roles[$roleName][0]['avatar_url'][$avatarNum];
 		}

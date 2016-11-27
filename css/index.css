@@ -32,11 +32,12 @@ h1, h2, h3, h4, h5, h6
 	border: 2px solid #686A6E;
 	height: 44px;
 }
-.anonyWhoPic
+#anonyWhoPic
 {
 	display: none;
 	width: 200px;
 	height: 200px;
+	cursor: pointer;
 }
 
 label

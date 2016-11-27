@@ -4,10 +4,39 @@ function textAreaAdjust(o) {
 }
 
 $(function() {
-	$('.anonyWhoPic').parent().find('[data-name="' + $('#anonyWho').val() + '"]').fadeIn();
+	var ajaxHandler = 'controller.php';
+	/**
+	 *  anonymous_message.php
+	 */
 	$('#anonyWho').change(function() {
-		$('.anonyWhoPic').hide();
-		$('.anonyWhoPic').parent().find('[data-name="' + $('#anonyWho').val() + '"]').fadeIn();
+		$('#anonyWhoPic').hide();
+		var currentIndex = -1;
+		if ($('#anonyWho').val() == $('#anonyWhoPic').data('name'))
+		{
+			currentIndex = $('#anonyWhoPic').data('index');
+		}
+
+		$.ajax({
+			url: ajaxHandler,
+			method: 'post',
+			data: {
+				action: 'getavatar',
+				name: $('#anonyWho').val(),
+				currentIndex: currentIndex
+			},
+			dataType:"json"
+		}).done(function(result) {
+			// console.log(result);
+			$('#anonyWhoPic').attr('src', result.getavatar.url).data('name', $('#anonyWho').val()).data('index', result.getavatar.index).fadeIn();
+		}).fail(function(jqXHR, textStatus, errorThrown) {
+			console.log("AJAX failed:\n" + textStatus + "\n" + errorThrown );
+			console.log(jqXHR);
+			$('#anonyWhoPic').fadeIn();
+		});
+	})
+	.trigger('change');
+	$('#anonyWhoPic').click(function() {
+		$('#anonyWho').trigger('change');
 	});
 	$('#anonySubmit').click(function() {
 		var anonyMessage = $.trim($("#anonyMessage").val());
@@ -18,7 +47,7 @@ $(function() {
 		}
 
 		var anonyWho = $('#anonyWho').val();
-		var avatarNum = $('.anonyWhoPic:visible').data('avatar');
+		var avatarNum = $('#anonyWhoPic:visible').data('index');
 
 		$('#anonySubmit').prop('disabled', true);
 		var anonySubmitControl = 5;
@@ -40,7 +69,7 @@ $(function() {
 		}, 1000);
 
 		$.ajax({
-			url: 'controller.php',
+			url: ajaxHandler,
 			method: 'post',
 			data: {
 				action: 'execute',
@@ -68,12 +97,15 @@ $(function() {
 		});
 	})
 
+	/**
+	 *  anonymous_log.php
+	 */
 	$('#logFileSelect').change(function() {
 		$('#logFileSelect').prop('disabled', true);
 		$('#logRefresh').fadeIn();
 
 		$.ajax({
-			url: 'controller.php',
+			url: ajaxHandler,
 			method: 'post',
 			data: {
 				action: 'getlogfile',

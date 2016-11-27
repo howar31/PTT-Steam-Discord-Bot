@@ -1,3 +1,6 @@
+<?php
+$logFileList = view::getLogFileList();
+?>
 <div id="anonymous_log" class="section row">
 	<div class="col-md-12">
 		<h2>匿名發言記錄</h2>
@@ -5,9 +8,6 @@
 	<div class="col-md-12">
 		<div class="form-group row">
 			<div class="col-md-12">
-				<?php
-				$logFileList = view::getLogFileList();
-				?>
 				<select id="logFileSelect" class="form-control col-xl-6 col-md-7">
 					<option value="" selected disabled>選擇記錄檔</option>
 					<?php

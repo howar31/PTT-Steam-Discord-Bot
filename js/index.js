@@ -84,12 +84,12 @@ $(function() {
 			$.each(log, function(index, item) {
 				var logHTML =
 				"<div class='logEntry row'>"+
-					"<div class='logTime col-md-2'>" + log[index].request_time_local + "</div>"+
-					"<div class='logIPPort col-md-2' title='" + log[index].user_agent + "'>"+
+					"<div class='logTime col-xl-2 col-md-3'>" + log[index].request_time_local + "</div>"+
+					"<div class='logIPPort col-xl-2 col-md-9' title='" + log[index].user_agent + "'>"+
 						"<span class='logIP'>" + log[index].remote_addr + "</span><span class='logPort'>:" + log[index].remote_port + "</span>"+
 					"</div>"+
-					"<div class='logName col-md-1'>" + log[index].username + "</div>"+
-					"<div class='logMessage col-md-7'>" + log[index].content + "</div>"+
+					"<div class='logName col-xl-1 col-md-3'>" + log[index].username + "</div>"+
+					"<div class='logMessage col-xl-7 col-md-9'>" + log[index].content + "</div>"+
 				"</div>";
 				$('#logContent').append(logHTML);
 			});

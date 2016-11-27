@@ -1,5 +1,5 @@
 <div id="anonymous_message" class="section row">
-	<div class="col-md-3">
+	<div class="col-xl-3 col-md-4">
 		<?php
 		$roles = view::getRoles();
 		foreach ($roles as $roleName => $roleData) {
@@ -10,7 +10,7 @@
 		}
 		?>
 	</div>
-	<form class="col-md-9" role="form" action="./" method="POST">
+	<form class="col-xl-9 col-md-8" role="form" action="./" method="POST">
 		<div class="form-group">
 			<label for="anonyWho">身份</label>
 			<select id="anonyWho" class="form-control">

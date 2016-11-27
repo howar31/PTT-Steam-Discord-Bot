@@ -14,7 +14,8 @@
       "display_name": "管管",
       "avatar_url": [
         "pic/moedict_admin.png",
-        "pic/moedict_discordadmin.png"
+        "pic/moedict_discordadmin.png",
+        "pic/administrator.png"
       ]
     }
   ],
@@ -31,7 +32,8 @@
     {
       "display_name": "鄉民",
       "avatar_url": [
-        "pic/moedict_netizen.png"
+        "pic/moedict_netizen.png",
+        "pic/201312170140427620c.jpg"
       ]
     }
   ],
@@ -39,7 +41,11 @@
     {
       "display_name": "帥哥",
       "avatar_url": [
-        "pic/moedict_handsome.png"
+        "pic/moedict_handsome.png",
+        "pic/2014103168085089.jpg",
+        "pic/f8619661da68.jpg",
+        "pic/25dc8fa865.jpg",
+        "pic/handsomehair.jpg"
       ]
     }
   ],
@@ -48,7 +54,15 @@
       "display_name": "正妹",
       "avatar_url": [
         "pic/stephy.jpg",
-        "pic/moedict_beauty.png"
+        "pic/moedict_beauty.png",
+        "pic/35.jpg",
+        "pic/a0913068_XL.jpg",
+        "pic/easonhou_951791.jpg",
+        "pic/3303238-prettygirl.jpg",
+        "pic/large.jpg",
+        "pic/pretty-face-wallpaper-3.jpg",
+        "pic/blonde-023.jpg",
+        "pic/blonde-08.jpg"
       ]
     }
   ],
@@ -65,7 +79,9 @@
     {
       "display_name": "學妹",
       "avatar_url": [
-        "pic/moedict_xueijr.png"
+        "pic/moedict_xueijr.png",
+        "pic/14201008589248.jpg",
+        "pic/fc49ae13.jpg"
       ]
     }
   ],
@@ -73,7 +89,31 @@
     {
       "display_name": "前輩",
       "avatar_url": [
-        "pic/moedict_senpai.png"
+        "pic/moedict_senpai.png",
+        "pic/secondpasso.png",
+        "pic/img11985.jpg"
+      ]
+    }
+  ],
+  "boss": [
+    {
+      "display_name": "老闆",
+      "avatar_url": [
+        "pic/20150722171146117.jpg",
+        "pic/20141001135627119.jpg",
+        "pic/30c1945b-4740-43e4-ac19-572a9a29f2fd_re.png",
+        "pic/steve-jobs.jpg",
+        "pic/20160303130643_419.png"
+      ]
+    }
+  ],
+  "worker": [
+    {
+      "display_name": "社畜",
+      "avatar_url": [
+        "pic/aboutsyachiku6.jpg",
+        "pic/a51492-0.png",
+        "pic/ZO0nSq2u.jpg"
       ]
     }
   ],
@@ -103,7 +143,8 @@
         "pic/fat_nerd.png",
         "pic/fat_nerd2.png",
         "pic/moedict_nerd.png",
-        "pic/moedict_verynerd.png"
+        "pic/moedict_verynerd.png",
+        "pic/8114309.png"
       ]
     }
   ],
@@ -112,7 +153,10 @@
       "display_name": "蘿莉",
       "avatar_url": [
         "pic/moedict_lo.png",
-        "pic/moedict_loli.png"
+        "pic/moedict_loli.png",
+        "pic/201208221147372947.jpg",
+        "pic/14175273784566.jpg",
+        "pic/20150602-1433256872.png"
       ]
     }
   ],
@@ -121,16 +165,8 @@
       "display_name": "蘿莉控",
       "avatar_url": [
         "pic/door_fbi.jpg",
-        "pic/moedict_fbi.jpg",
+        "pic/moedict_fbi.png",
         "pic/moedict_lolicon.png"
-      ]
-    }
-  ],
-  "fan": [
-    {
-      "display_name": "電風扇",
-      "avatar_url": [
-        "pic/moedict_fan.png"
       ]
     }
   ],
@@ -141,6 +177,30 @@
         "pic/sponsoredpost.png",
         "pic/moedict_sponsoredpost.png",
         "pic/moedict_sponsoredpostgirl.png"
+      ]
+    }
+  ],
+  "fan": [
+    {
+      "display_name": "電風扇",
+      "avatar_url": [
+        "pic/moedict_fan.png",
+        "pic/159871216.jpg",
+        "pic/651045YF10.jpg",
+        "pic/M04585057_big.jpg",
+        "pic/0330-01s.jpg"
+      ]
+    }
+  ],
+  "gundam": [
+    {
+      "display_name": "鋼彈",
+      "avatar_url": [
+        "pic/dfd62d934bafca211a506ed04f6c2516.jpg",
+        "pic/Gundam_Exia_LOL.jpg",
+        "pic/gundam-seed-2.jpg",
+        "pic/18db8tyxvwknmjpg.jpg",
+        "pic/635886338599286144-Gundam-Orphans-15-1.jpg"
       ]
     }
   ]

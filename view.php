@@ -23,5 +23,26 @@ class view
 		$logFileList = array_reverse($logFileList);
 		return $logFileList;
 	}
+	/**
+	 * Get role avatar url and index
+	 * @param  string   $roleName  role name
+	 * @param  int|null $avatarNum specify avatar to get, if null then get random avatar
+	 * @return array               return avatar url and index
+	 */
+	public function getAvatar(string $roleName, int $avatarNum = NULL)
+	{
+		$roles = view::getRoles();
+		$avatar = array();
+		if (empty($avatarNum))
+		{
+			$randomAvatar = model::getRandomValue($roles[$roleName][0]['avatar_url']);
+			$avatar['index'] = $randomAvatar['key'];
+			$avatar['url'] = $randomAvatar['value'];
+		} else {
+			$avatar['index'] = $avatarNum;
+			$avatar['url'] = $roles[$roleName][0]['avatar_url'][$avatarNum];
+		}
+		return $avatar;
+	}
 }
 ?>

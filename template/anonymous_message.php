@@ -3,9 +3,9 @@
 		<?php
 		$roles = view::getRoles();
 		foreach ($roles as $roleName => $roleData) {
-			$randomAvatar = model::getRandomValue($roleData[0]['avatar_url']);
+			$randomAvatar = view::getAvatar($roleName);
 			?>
-			<img class="anonyWhoPic" src="<?=$randomAvatar['value'];?>" data-name="<?=$roleName;?>" data-avatar="<?=$randomAvatar['key'];?>">
+			<img class="anonyWhoPic" src="<?=$randomAvatar['url'];?>" data-name="<?=$roleName;?>" data-avatar="<?=$randomAvatar['index'];?>">
 			<?php
 		}
 		?>

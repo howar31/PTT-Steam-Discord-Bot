@@ -1,10 +1,6 @@
-function textAreaAdjust(o) {
-	o.style.height = '1px';
-	o.style.height = (4 + o.scrollHeight) + 'px';
-}
-
 $(function() {
 	var ajaxHandler = 'controller.php';
+
 	/**
 	 *  anonymous_message.php
 	 */
@@ -38,6 +34,12 @@ $(function() {
 	$('#anonyWhoPic').click(function() {
 		$('#anonyWho').trigger('change');
 	});
+
+	$('#anonyMessage').keyup(function(e) {
+		$(this).height('1px');
+		$(this).height((-20 + this.scrollHeight) + 'px');
+	});
+
 	$('#anonySubmit').click(function() {
 		var anonyMessage = $.trim($("#anonyMessage").val());
 		if (!anonyMessage)
@@ -80,7 +82,7 @@ $(function() {
 			dataType:"json"
 		}).done(function(result) {
 			// console.log(result);
-			$('#anonyMessage').val('');
+			$('#anonyMessage').val('').trigger('keyup');
 			anonySubmitSending = false;
 			if (!anonySubmitSending && !anonySubmitDisabled)
 			{
@@ -124,7 +126,7 @@ $(function() {
 						"<span class='logIP'>" + log[index].remote_addr + "</span><span class='logPort'>:" + log[index].remote_port + "</span>"+
 					"</div>"+
 					"<div class='logName col-xl-1 col-md-3'>" + log[index].username + "</div>"+
-					"<div class='logMessage col-xl-7 col-md-9'>" + log[index].content + "</div>"+
+					"<div class='logMessage col-xl-7 col-md-9'>" + log[index].content.replace(/\n/g,"<br>") + "</div>"+
 				"</div>";
 				$('#logContent').append(logHTML);
 			});
@@ -136,6 +138,7 @@ $(function() {
 			$('#logFileSelect').prop('disabled', false);
 		});
 	});
+
 	$('#logRefresh').click(function() {
 		$(this).prop('disabled', true);
 		$('#logFileSelect').change();

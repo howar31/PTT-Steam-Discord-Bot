@@ -20,7 +20,7 @@ $roles = view::getRoles();
 		</div>
 		<div class="form-group">
 			<label for="content">訊息</label>
-			<textarea id="anonyMessage" class="form-control" name="content" rows="1" placeholder="傳訊息到 #chat (上限兩千字元)" onkeyup="textAreaAdjust(this)" maxlength="2000"></textarea>
+			<textarea id="anonyMessage" class="form-control" name="content" rows="1" placeholder="傳訊息到 #chat (上限兩千字元)" maxlength="2000"></textarea>
 		</div>
 		<div class="form-group">
 			<button id="anonySubmit" type="button" class="btn btn-primary">匿名發言</button>

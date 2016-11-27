@@ -59,10 +59,12 @@ label
 .logEntry:nth-child(odd)
 {
 	background-color: #31353C;
+	transition: all 0.1s linear;
 }
 .logEntry:hover
 {
 	background-color: #992D22;
+	transition: all 0.1s linear;
 }
 .logEntry .logIP
 {

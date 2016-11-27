@@ -54,7 +54,7 @@ class model
 	public function getRandomValue (array $inputArray, int $excludeIndex = NULL)
 	{
 		$max = count($inputArray);
-		if (empty($excludeIndex) || 1 >= $max)
+		if (!isset($excludeIndex) || 1 >= $max)
 		{
 			$randomNum = rand(0, ($max - 1));
 		} else {

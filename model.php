@@ -3,11 +3,21 @@ require_once(dirname(__FILE__)."/config.php");
 
 class model
 {
+	/**
+	 * Read JSON file
+	 * @param  string $filename file name of JSON
+	 * @param  string $type     path to JSON file, current could be "json" or "log"
+	 * @return array            decoded JSON data
+	 */
 	public function getJsonFile (string $filename, string $type = 'json')
 	{
 		return empty($filename) ? NULL : json_decode(file_get_contents($type.'/'.$filename.'.json'), true);
 	}
 
+	/**
+	 * Write log to file
+	 * @param array $addLog Add more detail to log besides PHP $_SERVER info
+	 */
 	public function setLogFile (array $addLog = array())
 	{
 		$LogFileName = 'PTT_Steam_Log_'.date('Ymd');
@@ -34,6 +44,18 @@ class model
 		$fp = fopen($LogFilePath, 'w');
 		fwrite($fp, json_encode($allLog));
 		fclose($fp);
+	}
+
+	/**
+	 * Select random value in array
+	 * @param  array  $inputArray can NOT be associative array
+	 * @return array value        random selected value from array
+	 */
+	public function getRandomValue (array $inputArray)
+	{
+		$max = count($inputArray);
+		$randomNum = rand(0, ($max - 1));
+		return $inputArray[$randomNum];
 	}
 }
 ?>

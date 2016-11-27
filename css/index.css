@@ -71,3 +71,7 @@ label
 {
 	color: #979C9F;
 }
+#logRefresh
+{
+	display: none;
+}

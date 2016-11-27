@@ -5,12 +5,10 @@ function textAreaAdjust(o) {
 
 $(function() {
 	$('.anonyWhoPic').parent().find('[data-name="' + $('#anonyWho').val() + '"]').fadeIn();
-
 	$('#anonyWho').change(function() {
 		$('.anonyWhoPic').hide();
 		$('.anonyWhoPic').parent().find('[data-name="' + $('#anonyWho').val() + '"]').fadeIn();
 	});
-
 	$('#anonySubmit').click(function() {
 		var anonyWho = $('#anonyWho').val();
 		var anonyMessage = $.trim($("#anonyMessage").val());
@@ -25,6 +23,7 @@ $(function() {
 		var anonySubmitDisabled = true;
 		var anonySubmitSending = true;
 		var originalText = $('#anonySubmit').text();
+		$('#anonySubmit').text('訊息發送中...');
 		var interval = setInterval(function() {
 			$('#anonySubmit').text('冷卻還有 ' + --anonySubmitControl + ' 秒');
 			if (0 >= anonySubmitControl) {
@@ -68,6 +67,7 @@ $(function() {
 
 	$('#logFileSelect').change(function() {
 		$('#logFileSelect').prop('disabled', true);
+		$('#logRefresh').fadeIn();
 
 		$.ajax({
 			url: 'controller.php',
@@ -86,7 +86,7 @@ $(function() {
 				"<div class='logEntry row'>"+
 					"<div class='logTime col-md-2'>" + log[index].request_time_local + "</div>"+
 					"<div class='logIPPort col-md-2' title='" + log[index].user_agent + "'>"+
-						"<span class='logIP'>" + log[index].remote_addr + "</span><span class='logPort'>" + log[index].remote_port + "</span>"+
+						"<span class='logIP'>" + log[index].remote_addr + "</span><span class='logPort'>:" + log[index].remote_port + "</span>"+
 					"</div>"+
 					"<div class='logName col-md-1'>" + log[index].username + "</div>"+
 					"<div class='logMessage col-md-7'>" + log[index].content + "</div>"+
@@ -100,5 +100,10 @@ $(function() {
 			console.log(jqXHR);
 			$('#logFileSelect').prop('disabled', false);
 		});
+	});
+	$('#logRefresh').click(function() {
+		$(this).prop('disabled', true);
+		$('#logFileSelect').change();
+		$(this).prop('disabled', false);
 	});
 });

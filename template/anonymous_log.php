@@ -2,20 +2,23 @@
 	<div class="col-md-12">
 		<h2>匿名發言記錄</h2>
 	</div>
-	<div class="col-md-6 form-group">
-		<?php
-		$logFileList = view::getLogFileList();
-		?>
-		<select id="logFileSelect" class="form-control">
-			<option value="" selected disabled>選擇記錄檔</option>
+	<div class="col-md-12">
+		<div class="form-group row">
 			<?php
-			foreach ($logFileList as $logFileName) {
-				?>
-				<option value="<?=$logFileName;?>"><?=$logFileName;?></option>
-				<?php
-			}
+			$logFileList = view::getLogFileList();
 			?>
-		</select>
+			<select id="logFileSelect" class="form-control col-md-6">
+				<option value="" selected disabled>選擇記錄檔</option>
+				<?php
+				foreach ($logFileList as $logFileName) {
+					?>
+					<option value="<?=$logFileName;?>"><?=$logFileName;?></option>
+					<?php
+				}
+				?>
+			</select>
+			<button id="logRefresh" type="button" class="btn btn-info col-md-1 offset-md-5">重新整理</button>
+		</div>
 	</div>
 	<div id="logTitle" class="col-md-12">
 		<div class="row">

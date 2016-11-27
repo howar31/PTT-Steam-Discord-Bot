@@ -1,92 +1,147 @@
 {
-	"anonymous": [
-		{
-			"display_name": "匿名者",
-			"avatar_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Anonymous_emblem.svg/2000px-Anonymous_emblem.svg.png"
-		}
-	],
-	"discordadmin": [
-		{
-			"display_name": "管管",
-			"avatar_url": "https://www.moedict.tw/%E7%AE%A1%E7%90%86%E5%93%A1.png"
-		}
-	],
-	"boardadmin": [
-		{
-			"display_name": "板主",
-			"avatar_url": "https://www.moedict.tw/%E7%89%88.png"
-		}
-	],
-	"netizen": [
-		{
-			"display_name": "鄉民",
-			"avatar_url": "https://www.moedict.tw/%E9%84%89%E6%B0%91.png"
-		}
-	],
-	"handsome": [
-		{
-			"display_name": "帥哥",
-			"avatar_url": "https://www.moedict.tw/%E5%B8%A5%E5%93%A5.png"
-		}
-	],
-	"beauty": [
-		{
-			"display_name": "正妹",
-			"avatar_url": "http://des13.cc/star/media/k2/items/cache/aee44fc32e47f07b5fe3050745ad94ac_XL.jpg"
-		}
-	],
-	"xueisr": [
-		{
-			"display_name": "學姊",
-			"avatar_url": "http://images.17173.com/2014/acg/2014/01/06/lhj0106sfq03s.jpg"
-		}
-	],
-	"xueijr": [
-		{
-			"display_name": "學妹",
-			"avatar_url": "https://www.moedict.tw/%E5%A5%B3%E5%BC%9F.png"
-		}
-	],
-	"senpai": [
-		{
-			"display_name": "前輩",
-			"avatar_url": "https://www.moedict.tw/%E5%89%8D%E8%BC%A9.png"
-		}
-	],
-	"loser": [
-		{
-			"display_name": "小魯",
-			"avatar_url": "https://www.moedict.tw/%E9%AD%AF%E5%A4%AB.png"
-		}
-	],
-	"littlesister": [
-		{
-			"display_name": "小妹",
-			"avatar_url": "https://www.moedict.tw/%E5%B0%8F%E5%A6%B9.png"
-		}
-	],
-	"nerd": [
-		{
-			"display_name": "肥宅",
-			"avatar_url": "https://www.moedict.tw/%E5%BE%88%E5%AE%85.png"
-		}
-	],
-	"loli": [
-		{
-			"display_name": "蘿莉",
-			"avatar_url": "https://www.moedict.tw/%E8%98%BF.png"
-		}
-	],
-	"lolicon": [
-		{
-			"display_name": "蘿莉控",
-			"avatar_url": "https://www.moedict.tw/%E7%BE%8E%E5%9C%8B%E8%81%AF%E9%82%A6%E8%AA%BF%E6%9F%A5%E5%B1%80.png"
-		}
-	],
-	"fan": [
-		{
-			"display_name": "電風扇",
-			"avatar_url": "https://www.moedict.tw/%E9%9B%BB%E9%A2%A8%E6%89%87.png"
-		}
-	]
+  "anonymous": [
+    {
+      "display_name": "匿名者",
+      "avatar_url": [
+        "pic/anonymous_emblem.png",
+        "pic/moedict_anonyname.png",
+        "pic/moedict_anony.png"
+      ]
+    }
+  ],
+  "discordadmin": [
+    {
+      "display_name": "管管",
+      "avatar_url": [
+        "pic/moedict_admin.png",
+        "pic/moedict_discordadmin.png"
+      ]
+    }
+  ],
+  "boardadmin": [
+    {
+      "display_name": "板主",
+      "avatar_url": [
+        "pic/moedict_board.png",
+        "pic/moedict_boardadmin.png"
+      ]
+    }
+  ],
+  "netizen": [
+    {
+      "display_name": "鄉民",
+      "avatar_url": [
+        "pic/moedict_netizen.png"
+      ]
+    }
+  ],
+  "handsome": [
+    {
+      "display_name": "帥哥",
+      "avatar_url": [
+        "pic/moedict_handsome.png"
+      ]
+    }
+  ],
+  "beauty": [
+    {
+      "display_name": "正妹",
+      "avatar_url": [
+        "pic/stephy.jpg",
+        "pic/moedict_beauty.png"
+      ]
+    }
+  ],
+  "xueisr": [
+    {
+      "display_name": "學姊",
+      "avatar_url": [
+        "pic/mami.jpg",
+        "pic/moedict_xueisr.png"
+      ]
+    }
+  ],
+  "xueijr": [
+    {
+      "display_name": "學妹",
+      "avatar_url": [
+        "pic/moedict_xueijr.png"
+      ]
+    }
+  ],
+  "senpai": [
+    {
+      "display_name": "前輩",
+      "avatar_url": [
+        "pic/moedict_senpai.png"
+      ]
+    }
+  ],
+  "loser": [
+    {
+      "display_name": "小魯",
+      "avatar_url": [
+        "pic/moedict_lu.png",
+        "pic/moedict_luffi.png",
+        "pic/moedict_pokericeseller.png",
+        "pic/porkrice.png"
+      ]
+    }
+  ],
+  "littlesister": [
+    {
+      "display_name": "小妹",
+      "avatar_url": [
+        "pic/moedict_littlesister.png"
+      ]
+    }
+  ],
+  "nerd": [
+    {
+      "display_name": "肥宅",
+      "avatar_url": [
+        "pic/fat_nerd.png",
+        "pic/fat_nerd2.png",
+        "pic/moedict_nerd.png",
+        "pic/moedict_verynerd.png"
+      ]
+    }
+  ],
+  "loli": [
+    {
+      "display_name": "蘿莉",
+      "avatar_url": [
+        "pic/moedict_lo.png",
+        "pic/moedict_loli.png"
+      ]
+    }
+  ],
+  "lolicon": [
+    {
+      "display_name": "蘿莉控",
+      "avatar_url": [
+        "pic/door_fbi.jpg",
+        "pic/moedict_fbi.jpg",
+        "pic/moedict_lolicon.png"
+      ]
+    }
+  ],
+  "fan": [
+    {
+      "display_name": "電風扇",
+      "avatar_url": [
+        "pic/moedict_fan.png"
+      ]
+    }
+  ],
+  "sponsoredpost": [
+    {
+      "display_name": "葉佩雯",
+      "avatar_url": [
+        "pic/sponsoredpost.png",
+        "pic/moedict_sponsoredpost.png",
+        "pic/moedict_sponsoredpostgirl.png"
+      ]
+    }
+  ]
 }

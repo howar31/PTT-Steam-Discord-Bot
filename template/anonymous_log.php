@@ -3,21 +3,23 @@
 		<h2>匿名發言記錄</h2>
 	</div>
 	<div class="col-md-12">
-		<div class="form-group">
-			<?php
-			$logFileList = view::getLogFileList();
-			?>
-			<select id="logFileSelect" class="form-control col-xl-6 col-md-7">
-				<option value="" selected disabled>選擇記錄檔</option>
+		<div class="form-group row">
+			<div class="col-md-12">
 				<?php
-				foreach ($logFileList as $logFileName) {
-					?>
-					<option value="<?=$logFileName;?>"><?=$logFileName;?></option>
-					<?php
-				}
+				$logFileList = view::getLogFileList();
 				?>
-			</select>
-			<button id="logRefresh" type="button" class="btn btn-info col-xl-1 offset-xl-5 col-md-2 offset-md-3">重新整理</button>
+				<select id="logFileSelect" class="form-control col-xl-6 col-md-7">
+					<option value="" selected disabled>選擇記錄檔</option>
+					<?php
+					foreach ($logFileList as $logFileName) {
+						?>
+						<option value="<?=$logFileName;?>"><?=$logFileName;?></option>
+						<?php
+					}
+					?>
+				</select>
+				<button id="logRefresh" type="button" class="btn btn-info col-xl-1 offset-xl-5 col-md-2 offset-md-3">重新整理</button>
+			</div>
 		</div>
 	</div>
 	<div id="logTitle" class="col-md-12">

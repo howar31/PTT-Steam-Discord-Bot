@@ -48,14 +48,14 @@ class model
 
 	/**
 	 * Select random value in array
-	 * @param  array  $inputArray can NOT be associative array
-	 * @return array value        random selected value from array
+	 * @param  array  $inputArray  can NOT be associative array
+	 * @return array               random selected key and value from array
 	 */
 	public function getRandomValue (array $inputArray)
 	{
 		$max = count($inputArray);
 		$randomNum = rand(0, ($max - 1));
-		return $inputArray[$randomNum];
+		return array('key' => $randomNum, 'value' => $inputArray[$randomNum]);
 	}
 }
 ?>

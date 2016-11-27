@@ -22,7 +22,7 @@ switch ($action) {
 		}
 		$roles = model::getJsonFile('roles');
 		$username = $roles[$name][0]['display_name'];
-		$avatar_url = $roles[$name][0]['avatar_url'];
+		$avatar_url = (((isset($_SERVER['HTTPS']) && 'on' == $_SERVER['HTTPS'])) ? 'https://' : 'http://').$_SERVER['HTTP_HOST'].dirname($_SERVER['PHP_SELF']).'/'.$roles[$name][0]['avatar_url'][$_POST['avatar']];
 
 		$content = trim($_POST['content']);
 		if(!isset($content) || empty($content)) {

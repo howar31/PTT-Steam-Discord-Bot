@@ -10,13 +10,15 @@ $(function() {
 		$('.anonyWhoPic').parent().find('[data-name="' + $('#anonyWho').val() + '"]').fadeIn();
 	});
 	$('#anonySubmit').click(function() {
-		var anonyWho = $('#anonyWho').val();
 		var anonyMessage = $.trim($("#anonyMessage").val());
 		if (!anonyMessage)
 		{
 			console.log("Message empty");
 			return;
 		}
+
+		var anonyWho = $('#anonyWho').val();
+		var avatarNum = $('.anonyWhoPic:visible').data('avatar');
 
 		$('#anonySubmit').prop('disabled', true);
 		var anonySubmitControl = 5;
@@ -43,7 +45,8 @@ $(function() {
 			data: {
 				action: 'execute',
 				name: anonyWho,
-				content: anonyMessage
+				content: anonyMessage,
+				avatar: avatarNum
 			},
 			dataType:"json"
 		}).done(function(result) {

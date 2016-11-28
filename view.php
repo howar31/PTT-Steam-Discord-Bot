@@ -10,6 +10,9 @@ class view
 
 	public function getLogFileList()
 	{
+		if (!is_dir('log')) {
+			mkdir('log', 0777, true);
+		}
 		$logFileList = array();
 		if ($handle = opendir(dirname(__FILE__).'/log/')) {
 			while (false !== ($entry = readdir($handle))) {
@@ -33,7 +36,7 @@ class view
 	 * @param  bool     $isRandom  get random avatar or specific avatar
 	 * @return array               return avatar url and index
 	 */
-	public function getAvatar(string $roleName, int $avatarNum = NULL, bool $isRandom = true)
+	public function getAvatar($roleName, $avatarNum = NULL, $isRandom = true)
 	{
 		$roles = view::getRoles();
 		$avatar = array();

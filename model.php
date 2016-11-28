@@ -9,7 +9,7 @@ class model
 	 * @param  string $type     path to JSON file, current could be "json" or "log"
 	 * @return array            decoded JSON data
 	 */
-	public function getJsonFile (string $filename, string $type = 'json')
+	public function getJsonFile ($filename, $type = 'json')
 	{
 		return empty($filename) ? NULL : json_decode(file_get_contents($type.'/'.$filename.'.json'), true);
 	}
